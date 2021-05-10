@@ -1,0 +1,12 @@
+{
+  "products" : [
+    {
+      "productName" : "raket dewa",
+      "imagePath" : "https://images.tokopedia.net/img/cache/900/product-1/2019/12/23/1590188/1590188_0813c513-16f1-4fea-9d5f-41d98451cfb2_1134_1134.jpg",
+      "price": 900000,
+      "category" : "raket",
+      "stock" : 999,
+      "description": "raket para dewa"
+    }
+  ]
+}

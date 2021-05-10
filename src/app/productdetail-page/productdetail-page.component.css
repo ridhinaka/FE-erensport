@@ -1,0 +1,53 @@
+.box{
+  
+    margin-top: 40px;
+}
+
+h1{
+  font-size: 30px;
+}
+
+h2{
+  font-size: 20px;
+}
+h3{
+  font-size: 15px;
+}
+
+.left-body{
+  display: flex;
+  position: relative;
+  /* background: black; */
+  /* width: 100%; */
+  height: 60vh ;
+  padding: 30px;
+  /* border-radius: 20px; */
+  /* border: 1px solid gray; */
+}
+
+.product-img{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc; 
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  
+  box-shadow:         3px 3px 5px 6px #ccc;
+  object-fit: cover;
+}
+.right-body{
+  /* background: cyan; */
+  margin-top: 25px;
+}
+
+.name{
+
+}
+
+.text-desc{
+
+  border-bottom: 2px solid black;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  width: 30vh;
+}

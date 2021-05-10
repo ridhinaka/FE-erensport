@@ -1,0 +1,24 @@
+.product{
+  margin-top: 40px;
+}
+
+.jumbotron {
+  display: flex;
+  height: 50vh;
+}
+
+.text-wrapper{
+  display: flex;
+  margin-top: 60px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.text-product{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2{
+  font-size: 30px;
+}
