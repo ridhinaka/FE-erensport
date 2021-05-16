@@ -1,0 +1,18 @@
+<div class="col-md-4"  *ngFor="let product of products">
+  <div class= "card mb-4 shadow-sm card-product"data-aos="zoom-out" >
+    
+    <img class="bd-placeholder-img card-img-top p-2" width="100%" [src]="product.imagePath"/>
+  
+    <div class="card-body ">
+      <h1 class="card-text card-product">{{product.productName}}</h1>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button *ngIf="this.userServiceService.isLogin" type="button" class="btn btn-sm btn-outline-primary" (click)="clickAddtoCart(product._id,1)" (click)="showToatr()" >Add to cart</button>
+          <button type="button" class="btn btn-sm btn-outline-success" [routerLink]="['/productdetail/' + product._id]">View Details</button>
+        </div>
+        <small class="text-muted price-tag">Rp {{product.price}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+

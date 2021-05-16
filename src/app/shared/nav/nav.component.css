@@ -7,9 +7,15 @@
 .icon {
   font-size:30px;
   color: white;
-  /* margin-top: 5px; */
+  margin-right: 25px;
 }
 
 .icon:hover{
   cursor: pointer;
+  border: none;
+}
+
+.logout{
+  cursor: pointer;
+  margin-right: 15px;
 }

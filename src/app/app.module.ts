@@ -5,24 +5,25 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './shared/nav/nav.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { ShopingComponent } from './shoping/shoping.component';
-import { FilterComponent } from './shoping/filter/filter.component';
-import { ProductListComponent } from './shoping/product-list/product-list.component';
-import { ProductComponent } from './shoping/product-list/product/product.component';
-import { HomeComponent } from './home/home.component';
+import { FilterComponent } from './component/home/filter/filter.component';
+import { ProductListComponent } from './component/home/product-list/product-list.component';
+import { ProductComponent } from './component/home/product-list/product/product.component';
+import { HomeComponent } from './component/home/home.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ShoesProductComponent } from './shoping/product-list/shoes-product/shoes-product.component';
-import { BagsProductComponent } from './shoping/product-list/bags-product/bags-product.component';
-import { ShuttlecocksProductComponent } from './shoping/product-list/shuttlecocks-product/shuttlecocks-product.component';
-import { ApparelProductComponent } from './shoping/product-list/apparel-product/apparel-product.component';
-import { CartComponent } from './cart/cart.component';
-import { CartContainerComponent } from './cart/cart-container/cart-container.component';
-import { CartProductComponent } from './cart/cart-container/cart-product/cart-product.component';
-import { CartTotalComponent } from './cart/cart-container/cart-total/cart-total.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { ProductdetailPageComponent } from './productdetail-page/productdetail-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './component/cart/cart.component';
+import { CartContainerComponent } from './component/cart/cart-container/cart-container.component';
+import { CartProductComponent } from './component/cart/cart-container/cart-product/cart-product.component';
+import { CartTotalComponent } from './component/cart/cart-total/cart-total.component';
+import { LoginComponent } from './component/login/login.component';
+import { SignupComponent } from './component/signup/signup.component';
+import { ProductdetailPageComponent } from './component/productdetail-page/productdetail-page.component';
+import { HttpClientModule ,HTTP_INTERCEPTORS} from '@angular/common/http';
+import {ToastrModule} from 'ngx-toastr'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {AuthService} from './services/auth.service';
+import { OrderComponent } from './component/order/order.component';
+
 
 
 
@@ -32,16 +33,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     NavComponent,
     HeaderComponent,
-    ShopingComponent,
     FilterComponent,
     ProductListComponent,
     ProductComponent,
     HomeComponent,
     FooterComponent,
-    ShoesProductComponent,
-    BagsProductComponent,
-    ShuttlecocksProductComponent,
-    ApparelProductComponent,
     CartComponent,
     CartContainerComponent,
     CartProductComponent,
@@ -49,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     SignupComponent,
     ProductdetailPageComponent,
+    OrderComponent,
 
 
   ],
@@ -56,10 +53,25 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut:1000,
+      progressBar:true,
+      progressAnimation:'increasing',
+      preventDuplicates:true
+    })
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : AuthService,
+      multi : true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,40 @@
+
+<div class="container">
+  <div class="product-category mt-3">
+    <h1>Our Product</h1>
+  </div>
+  <div class="box">
+    <div class="row">
+      <div class="col-md-4 left-body">
+        <img [src]="data.msg.imagePath"
+        class="product-img">
+      </div>
+      <div class="col-md-6 right-body">
+        <div class="row">
+          <div class="col-md-12 name">
+            <h2>{{data.msg?.productName}}</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Rp {{data.msg?.price}}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-desc">
+            <p>{{data.msg?.description}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button *ngIf="this.userServiceService.isLogin" type="button" class="btn btn-secondary btn-sm" (click)="clickAddtoCart(data.msg._id,1)" (click)="showToatr()" >Add to Cart</button>
+            <a class="btn" href="/home" *ngIf="!this.userServiceService.isLogin" type="button" class="btn btn-secondary btn-sm">Back to home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+
+
+

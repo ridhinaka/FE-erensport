@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Your Cart</h1>
+  <div class="row">
+    <h3 *ngIf="carts.length == 0" >Your cart is empty</h3>
+    <div class="col-lg-8 mt-5" *ngFor="let cart of carts;index as I">
+        <div class="card w-75 bigcard" data-aos="zoom-out">
+          <div class="card-body cardproduct">  
+            <div class="main">
+              <div class="img">
+                <img class="product-img" [src]="cart.product_id.imagePath"alt="Card image cap">
+              </div>
+              <div class="text-product">
+                  <p class="card-text card1">{{cart.product_id.productName}}</p>
+                  <p class="card-text">Quantity ({{cart.quantity}})pcs</p>
+                  <p class="card-text">{{cart.product_id.description}}</p>
+                  <p class="card-text card2">Rp {{cart.total_price}}</p>
+              </div>   
+            </div>
+            <i class="fa fa-trash trash" (click)="deleteCart(cart._id)" (click)="showToatr()" aria-hidden="true"[routerLink]="['/cart/' + cart._id]" ></i>
+          </div>
+        </div>
+    </div>
+    <div class="box-total" *ngIf="carts.length > 0" >
+      <div class="col-lg-4 total-cart">
+        <div class="card" style="width: 25rem;">
+          <div class="card-body">
+            <h5 class="card-title">Shopping summary</h5>
+            <p class="card-text">Rp {{carts.length}}</p>
+            <div class="total-box">
+            </div>
+            <a href="/order"  class="btn btn-primary">Checkout!</a>
+          </div>
+        </div>
+      </div> 
+    </div>  
+  </div>
+</div>

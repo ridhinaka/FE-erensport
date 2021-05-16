@@ -1,0 +1,36 @@
+<div class="container login mt-5">
+  <div class="wrapper">
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <h1 class="text">Create your user here</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <form [formGroup]="signup" (ngSubmit)="registerUser()" class="form-signup was-validated"> 
+          <div class="form-label-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email"required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+
+          <div class="form-label-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password"required>
+          </div>
+
+          <div class="form-label-group">
+            <label for="exampleInputEmail1">Address</label>
+            <input type="default_address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter address" formControlName="default_address"required>
+          </div>
+
+          <div class="form-label-group phone">
+            <label for="exampleInputEmail1">Phone number</label>
+            <input type="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter phone number" formControlName="phone"required>
+          </div>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

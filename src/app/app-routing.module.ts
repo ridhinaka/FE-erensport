@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from '../app/home/home.component'
-import {CartComponent} from '../app/cart/cart.component'
-import {LoginComponent} from '../app/login/login.component'
-import {SignupComponent} from '../app/signup/signup.component'
-import {ProductdetailPageComponent} from '../app/productdetail-page/productdetail-page.component'
+import {HomeComponent} from './component/home/home.component'
+import {CartComponent} from './component/cart/cart.component'
+import {LoginComponent} from './component/login/login.component'
+import {SignupComponent} from './component/signup/signup.component'
+import {ProductdetailPageComponent} from './component/productdetail-page/productdetail-page.component'
+import {OrderComponent} from './component/order/order.component'
 
 
 const routes: Routes = [
-  {path : "", redirectTo:'/home' , pathMatch: "full"},
+  {path : '', redirectTo:'/home' , pathMatch: "full"},
   {path : 'login', component: LoginComponent},
   {path : 'home',component:HomeComponent},
   {path: 'cart', component:CartComponent},
+  {path: 'cart/:id', component:CartComponent},
   {path: 'signup',component:SignupComponent},
-  {path: 'productdetail',component:ProductdetailPageComponent}
+  {path: 'productdetail/:id',component:ProductdetailPageComponent},
+  {path: 'order',component:OrderComponent},
+  {path: '**',redirectTo:'/home', pathMatch:"full"}
 ];
 
 @NgModule({
