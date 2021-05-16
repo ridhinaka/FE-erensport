@@ -8,10 +8,11 @@ function requireHTTPS(req, res, next) {
 const express = require('express');
 const app = express();
 app.use(requireHTTPS);
-app.use(express.static('./dist/eren-sport'));
+app.use(express.static('./dist/erenSport'));
 
 app.get('/*', function(req, res) {
-  res.sendFile('index.html', {root: 'dist/eren-sport/'}
+  res.sendFile('index.html', {root: 'dist/erenSport/'}
 );
 });
 app.listen(process.env.PORT || 8080);
+
